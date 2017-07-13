@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<div lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <script src="{%  static 'js/our.js' %}"></script>
+
+    <title> Nikita</title>
+</head>
+
+
+<table class="table-layout">
+    <row>
+        <td rowspan="2">
+            <img src="{% static 'images.jpeg' %}"/><td>
+        <td><div class="btn btn-info"><h1>Nikita Stasenko</h1></div></td>
+
+        <td><div class="btn btn-info" id="'my_name"><h1>Born to be Historian</h1></div></td>
+    </row>
+
+
+
+
+<row>
+    <td><div class="btn btn-warning"><h1>Born:</h1>
+    <h1 id="Historian" class="btn btn-success">To Be Historian</h1></div></td>
+</row>
+
+</table>
+<div id="clicker" class="btn btn-info">To be Historian</div>
+
+<ul class="list">
+    <li>University: Moscow State University (MSU)</li>
+    <li>City: Moscow</li>
+    <li>Faculty: Historian and Philosophy</li>
+    <li>Bachelor diploma work: Vikings and their influence on Russian History</li>
+
+</ul>
+<a href=" /myself/new_post"><div class="btn btn-primary">Add new post</div></a>
+
+{%  for post in all_posts %}
+    <div class="btn-info">
+    <div class="btn btn-error">{{ post.author }}</div>
+    <div class="btn-success btn">{{ post.date }}</div>
+        <br>
+        <div class="btn-warning btn"
+    {{ post.author }} {{ post.date }}{{ post.body }}</div>
+    </div>
+   <br>
+{{ post.body }}
+
+{% endfor %}
+</body>
+</html>
